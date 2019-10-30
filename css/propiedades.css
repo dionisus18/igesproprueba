@@ -1,0 +1,56 @@
+/*
+Colores de GESPRO
+Blanco: #FFFFFF;
+CelesteR: #01B1EC;
+negro: #313131;
+verde: #40B193;
+azul: #6C8ECE;
+rojo: #D54D4D;
+*/
+
+.colorCelesteR{
+  color: rgb(11, 142, 185);
+}
+.colorVerde{
+  color: rgb(51, 141, 117);
+}
+.colorAzul{
+  color: rgb(92, 122, 177);
+}
+.inline{
+    width: 40%;
+    display: inline-block;
+    height: 0px;
+  }
+  .inline2{
+    width: 40%;
+    display: inline-block;
+    height: 0px;
+    position: relative;
+    top: -60px;
+  }
+  .up{
+    position: relative;
+    top:-160px;
+  }
+  .up2{
+    position: relative;
+    top:-50px;
+  }
+
+  .up3{
+    position: relative;
+    top:-20px;
+  }
+
+  .comentform2{
+      top: -125px;
+  }
+ .comentform2>input[type="submit"]{
+     height: 60px;
+     font-size: 20px;
+ }
+
+.iver{
+  width: 50%;
+}

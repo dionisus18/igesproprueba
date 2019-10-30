@@ -1,0 +1,649 @@
+/*------------ registrarse.html --------------*/
+.reg > .section {
+  width: 100%;
+}
+.reg {
+  background: url(../img/pexels-photo-2.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.reg > .a > .wbox {
+  width: 661px;
+  height: 784px;
+  top: 112px;
+  left: 630px;
+}
+
+.registro {
+  width: 581px;
+  padding: 10px 42px 10px 38px;
+  font-family: poppins, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  text-align: left;
+  line-height: 21px;
+}
+.registro > .titulo {
+  font-weight: 700;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+.reg > .a > .wbox > .registro > form > input[type="submit"] {
+  margin-top: 25px;
+  background-color: #6c8ece;
+}
+.reg > .a > .wbox > .registro > form > input[type="submit"]:hover {
+  background-color: rgb(60, 96, 161);
+}
+
+input[type="password"] {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  height: 48px;
+  font-family: poppins, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  line-height: 21px;
+  text-indent: 10px;
+}
+
+.back {
+  font-family: poppins, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  line-height: 21px;
+  text-indent: 10px;
+}
+.back > a > .iback {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  top: 60px;
+}
+.back > a > p {
+  position: absolute;
+  top: 147px;
+  left: 100px;
+}
+.back > a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+}
+/*------------ fin de registrarse.html ------------*/
+
+/*------------ recuperarContrasena.html ------------*/
+.formR {
+  padding-top: 62px;
+}
+
+.reg > .a > .wbox > .registro > .formR > input[type="submit"] {
+  margin-top: 140px;
+  background-color: #6c8ece;
+}
+/*------------ fin de recuperarContrasena.html ------------*/
+/*------------ Dashboard.html ------------*/
+
+.dashboard>header>nav{
+  position: fixed;
+
+}
+
+/* sideNab */
+
+.sidenav{
+  width: 131px;
+  height: 100%;
+  background-color: #313131;
+  position: fixed;
+  top: 64px;
+  z-index: 1;
+}
+
+.sidenav>.sidenavCont{
+  width: 101px;
+  position: fixed;
+  top: 100px;
+  left: 15px;
+  text-align: center;
+}
+.sidenav>.sidenavCont>a{
+  text-decoration: none;
+  color: white;
+}
+.iside{
+  margin-bottom: 11px;
+}
+
+/* fin sidenav */
+.sdash{
+  width: 100%;
+  height: auto;
+}
+
+.sdash>.proyectos{
+  width: 924px;
+  height: auto;
+  position: relative;
+  top: 145px;
+  left: 300px;
+}
+
+.sdash>.wbox{
+  width: 564px;
+  height: 682px;
+  top: 200px;
+  left: 1286px ;
+}
+.sdash>.wbox>.cont{
+  width: 484px;
+  position: absolute;
+  left: 52px;
+  top:56px;
+}
+
+.sdash>.wbox>.cont>.kanbi{
+  width: 500px;
+  position: relative;
+  top: 60px;
+}
+
+.listProy{
+  margin-top: 65px;
+  width: 100%;
+
+}
+.listProy>.Principal, th, td{
+  padding: 0 0 5px 0;
+}
+
+.listProy>.filaNormal, .Ncol{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 24px 0 24px 0;
+}
+
+.listProy>.filaNormal, .Ncolf{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  padding: 24px 0 24px 0;
+}
+
+.space, .colSpace{
+  padding: 11px 0 11px 0;
+}
+.proyectosTerminados{
+  margin-top: 100px;
+}
+
+.btnIngresar{
+  text-decoration: none;
+  color: #ffffff;
+
+}
+.btn{
+  Background-color: #6c8ece;
+  padding: 0 24px 0 24px;
+}
+
+.btn:hover{
+  Background-color: #426199;
+}
+
+.over{
+  Background-color: #40B193;
+  padding: 0 24px 0 24px;
+}
+
+.over:hover{
+  Background-color: rgb(42, 128, 105);
+}
+/*------------ fin de dashboard.html ------------*/
+/*------------ nuevoProyecto.html ------------*/
+.nProy{
+  width: 100%;
+  height: auto;
+}
+
+.nProy>.wbox{
+  top: 145px;
+  width: 679px;
+  height: 706px;
+  text-align: center;
+}
+
+.left{
+  left: 318px;
+}
+.right{
+  left: 1171px;
+}
+.boxc{
+width: 602px;
+position: relative;
+top: 56px;
+left: 39px;
+}
+
+.nProy>.wbox>.boxc>form{
+  margin: 80px 0 0 0;
+  text-align: left;
+}
+
+input[type="button"] {
+  width: 100%;
+  height: 48px;
+  font-family: poppins, sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  line-height: 21px;
+  background-color: #6c8ece;
+  color: #ffffff;
+  border: none;
+}
+input[type="button"]:hover {
+
+  background-color: #426199;
+
+}
+/*------------ fin de nuevoProyecto.html ------------*/
+/*------------ proyecto.html ------------*/
+.proyectos>p{
+  display: inline;
+}
+.cod{
+  color:#717171;
+}
+.space2{
+  margin-top: 51px;
+}
+
+.listTareas{
+  margin-top: 15px;
+  width: 100%;
+  
+}
+.listTareas>.filanormal, .Tcol{
+  border: 1px solid black;
+  vertical-align: center;
+}
+
+.Tcol1{
+  border: 1px solid black;
+  text-align: left;
+  padding: 0 0 0 10px;
+}
+
+/* CSS para tareas */
+.completa{
+  background-color: #40B193;
+  color: white;
+}
+.revision{
+  background-color: #01B1EC;
+  color: white;
+}
+.atrasada{
+  background-color: #D54D4D;
+  color: white;
+}
+/* fin css para tareas */
+
+/* sideNav proyectos */
+.proyNav{
+  width: 100px;
+  height: 95%;
+  background-color: #6C8ECE;
+  position: fixed;
+  left: 131px;
+  top: 64px;
+  border-radius: 0 30px 30px 0;
+  z-index: 1;
+  box-shadow: 0px 3px 6px grey;
+
+}
+
+.proyNav>.sidenavCont{
+  width: 80px;
+  position: fixed;
+  top: 100px;
+  left: 141px;
+  text-align: center;
+}
+.proyNav>.sidenavCont>a{
+  text-decoration: none;
+  color: white;
+}
+
+.tareasSection>.wbox{
+  width: 460px;
+  height: 525px;
+  left: 1390px;
+  top: 176px;
+}
+.tareasSection>.wbox>.Tcont{
+  width: 400px;
+  position: relative;
+  left: 30px;
+  top: 30px;
+}
+.cblue{
+  color: #6C8ECE;
+}
+.RTpersonal{
+  width: 100%;
+  text-align: left;
+}
+
+.RTrow, .RTcol{
+  padding: 5px 0 5px 0;
+}
+/*------------ fin de Proyecto.html ------------*/
+/*------------ detalleTareas.html ------------*/
+.boxc>p{
+  display: inline;
+}
+.inline{
+  width: 40%;
+  display: inline-block;
+}
+.floatR{
+position: relative;
+top: -100px;
+left: 362px;
+}
+.floatR2{
+  position: relative;
+top: -148px;
+left: 362px;
+}
+.floatL{
+  position: relative;
+  top: -100px;
+  }
+.DT>.wbox{
+  height: 850px;
+}
+.up{
+  position: relative;
+  top:-100px;
+}
+.DT>.wbox>.boxc>form>.cred{
+  background-color: #D54D4D;
+}
+.DT>.wbox>.boxc>form>.cred:hover{
+  background-color: rgb(156, 45, 45);
+}
+.DT>.wbox>.boxc>form>.inline>.cgreen{
+  background-color: #40B193;
+}
+.DT>.wbox>.boxc>form>.inline>.cgreen:hover{
+  background-color: rgb(42, 128, 105);
+}
+
+.upload{
+ width: 0.1px;
+ height: 0.1px;
+ opacity: 0;
+}
+
+.upload + label {
+  width: 200px;
+  height:40px;
+  font-family: poppins, sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  line-height: 21px;
+  color: white;
+  padding-top: 15px;
+  text-align: center;
+  background-color: #40b193;
+  display: inline-block;
+  transition: 150ms;
+}
+
+.upload:focus + label,
+.upload + label:hover {
+    background-color: rgb(42, 128, 105);
+    cursor:pointer;
+}
+
+.DT>.right>.boxc>form>.sdebtn>input[type="submit"]{
+  width: 30%;
+  height:40px;
+  font-family: poppins, sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  line-height: 21px;
+  color: white;
+  margin-left: 14px;
+  padding-top: 15px;
+  padding-bottom: 40px;
+  text-align: center;
+  display: inline-block;
+  transition: 150ms;
+}
+
+.sdebtn>.cred{
+  background-color: #D54D4D;
+}
+.sdebtn>.cred:hover{
+  background-color: rgb(156, 45, 45);
+}
+
+.sdebtn>.cblue{
+  background-color: #6C8ECE;
+}
+.sdebtn>.cblue:hover{
+  background-color: #426199;
+}
+
+.comentform>.cblue{
+  background-color: #6C8ECE;
+}
+.comentform>.cblue:hover{
+  background-color: #426199;
+}
+
+.comentform{
+  position: relative;
+  top: -60px;
+}
+
+.comentform2{
+  position: relative;
+  top: -100px;
+}
+
+.textCom{
+  resize: none;
+  height: 150px;
+  margin-bottom: 15px;
+  width: 100%;
+  font-family: poppins, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  line-height: 21px;
+  text-indent: 10px;
+}
+
+.DT{
+  position: relative;
+  top: -70px;
+}
+
+.boxc{
+  height: 750px;
+}
+/*------------ fin de detalleTareas.html ------------*/
+/*------------ nuevaTarea.html ------------*/
+.NT>.wbox{
+  height: 750px;
+}
+
+select, input[type="date"], input[type="number"]{
+  margin-top: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  height: 48px;
+  font-family: poppins, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  line-height: 21px;
+  text-indent: 10px;
+}
+
+.NTsection>.kanbi{
+  width: 745px;
+  height: 662px;
+  position: relative;
+  left: 1063px;
+  top: 170px;
+}
+/*------------ fin de nuevaTarea.html ------------*/
+/*------------ estadoProyecto.html ------------*/
+.EPsdash{
+  width: 100%;
+  height: auto;
+}
+
+.EPsdash>.EPproyectos{
+  width: 708px;
+  height: auto;
+  position: relative;
+  top: 145px;
+  left: 300px;
+}
+.Ncold{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  padding: 24px 0 24px 0;
+}
+.backgroundBlue{
+background-color: #6C8ECE;
+color: white;
+}
+.Ecol{
+  width: 200px;
+}
+
+.EPsection>.wbox{
+  width: 354px;
+  height: 316px;
+  top:320px;
+  left: 1090px;
+}
+
+.EPsection>.wbox2{
+  left: 1496px;
+}
+
+.EPsection>.wbox>.cont{
+  margin: 20px 0 0 50px;
+}
+
+.big{
+  margin: 64px 0 0 30px;
+  font-weight: 700;
+  font-size: 90px;
+  line-height: 124px;
+}
+/*------------ fin de estadoProyecto.html ------------*/
+/*------------ detalleIntegrantes.html ------------*/
+.DI{
+  width: 100%;
+  height: auto;
+}
+.DI>.integrantes{
+  width: 1503px;
+  height: auto;
+  position: relative;
+  top: 145px;
+  left: 300px;
+}
+
+.DIwbox{
+  width: 1503px;
+  height: 250px;
+  background-color: #ffffff;
+  box-shadow: 0px 3px 6px grey;
+  border-radius: 49px;
+  margin: 40px 0 0 0;
+
+}
+.DIwbox>.cont{
+  width: 1416px;
+  position: relative;
+  top: 30px;
+  left: 28px;
+}
+.Nintegrante{
+  width: 50%;
+}
+.DIcol{
+  border: 1px solid black;
+  padding: 5px 0 5px 0; 
+  width: 500px;
+}
+.DIPrincipal{
+  text-align: left;
+  padding-left: 10px;
+}
+.DIdatos{
+  margin-top: 50px;
+  width: 100%;
+}
+.DIdatoscol{
+  border: 1px solid black;
+  padding: 5px 0 5px 0; 
+  width: 177px;
+}
+.DIpriv{
+  width: 30%;
+  position: relative;
+  top:-170px;
+  left: 772px;
+}
+.DIpriv>select{
+height: 32px;
+}
+.DIpriv>input[type="submit"] {
+  width: 50%;
+  height: 32px;
+  font-family: poppins, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  line-height: 21px;
+  background-color: #6C8ECE;
+  color: #ffffff;
+  border: none;
+  position: relative;
+  top: -47px;
+  left: 430px;
+}
+

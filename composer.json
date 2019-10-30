@@ -1,0 +1,8 @@
+{
+    "require": {
+        "mongodb/mongodb": "^1.4",
+        "filp/whoops": "^2.5",
+        "symfony/var-dumper": "^4.3",
+        "whoops/soap": "^1.0"
+    }
+}

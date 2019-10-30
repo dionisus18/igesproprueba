@@ -1,0 +1,379 @@
+/*
+Colores de GESPRO
+Blanco: #FFFFFF;
+CelesteR: #01B1EC;
+negro: #313131;
+verde: #40B193;
+azul: #6C8ECE;
+rojo: #D54D4D;
+*/
+
+
+.poppins{
+  font-family: poppins, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 21px;
+}
+.semibold{
+  font-weight: 600;
+  font-size: 20px;
+}
+.bold{
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.extra{
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 50px;
+}
+
+/* este es el style para el header */
+header > nav {
+  background-color: #01b1ec;
+  height: 64px;
+  width: 100%;
+  z-index: 1;
+}
+.navImg {
+  height: 57px;
+  position: absolute;
+  top: 3px;
+  left: 50px;
+}
+header > nav > ul > li > a {
+  text-decoration: none;
+  color: #ffffff;
+  font-family: poppins, sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  font-style: normal;
+  letter-spacing: 0.5em;
+  position: absolute;
+  top: 20px;
+  left: 120px;
+}
+/* Fin style del header */
+
+/* Style de las secciones */
+.section {
+  width: 100%;
+}
+
+/* primera seccion */
+
+.indexHTML{
+  background: url(../img/pexels-photo-1509428.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/* texto principal de la pagina */
+.textoPrincipal {
+  max-width: 676px;
+  position: absolute;
+  top: 568px;
+  left: 66px;
+  font-family: poppins, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  text-align: left;
+  line-height: 21px;
+}
+.a > .textoPrincipal > .logo {
+  position: absolute;
+  top: -200px;
+  left: 66px;
+}
+.a > .textoPrincipal > .titulo {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 72px;
+}
+/* fin texto principal */
+/* wbox */
+.wbox {
+  width: 538px;
+  height: 754px;
+  background-color: #ffffff;
+  box-shadow: 0px 3px 6px grey;
+  border-radius: 49px;
+  position: absolute;
+  top: 120px;
+  left: 66%;
+}
+/* login */
+.a > .wbox {
+  text-align: center;
+  padding-top: 20px;
+}
+.a > .wbox > .login > p {
+  padding-top: 15px;
+}
+.a > .wbox > .login {
+  width: 458px;
+  position: absolute;
+  left: 40px;
+  font-family: poppins, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  line-height: 21px;
+}
+.a > .wbox > .login > form {
+  padding-top: 15px;
+  text-align: left;
+}
+
+.login > p > a {
+  text-decoration: none;
+  color: #01b1ec;
+}
+
+input[type="text"] {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  height: 48px;
+  font-family: poppins, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  line-height: 21px;
+  text-indent: 10px;
+}
+
+input[type="password"] {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  height: 48px;
+  font-family: poppins, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  line-height: 21px;
+  text-indent: 10px;
+}
+
+input[type="submit"] {
+  width: 100%;
+  height: 48px;
+  font-family: poppins, sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  line-height: 21px;
+  background-color: #40b193;
+  color: #ffffff;
+  border: none;
+}
+
+input[type="submit"]:hover {
+  background-color: rgb(33, 139, 111);
+}
+/* botones de red social */
+/* facebook */
+.facebook {
+  position: inherit;
+  top: 440px;
+  left: 0;
+  width: 100%;
+  text-decoration: none;
+  height: 48px;
+  background-color: #5a5a5a;
+  text-decoration: none;
+  color: white;
+  
+}
+.facebook:hover {
+  background-color: rgb(54, 54, 54);
+}
+.facebook > p {
+  text-align: center;
+  position: relative;
+  top: 10px;
+  cursor: pointer;
+}
+.facebook > p > .iface {
+  position: relative;
+  top: -2px;
+  left: -50px;
+  
+}
+/* google */
+.google {
+  position: inherit;
+  top: 500px;
+  left: 0;
+  width: 100%;
+  text-decoration: none;
+  height: 48px;
+  background-color: #5a5a5a;
+  text-decoration: none;
+  color: white;
+  
+}
+.google:hover {
+  background-color: rgb(54, 54, 54);
+}
+.google > p {
+  text-align: center;
+  position: relative;
+  top: 10px;
+ 
+}
+.google > p > .igoogle {
+  position: relative;
+  top: -2px;
+  left: -58px;
+  
+}
+/* botones de red social */
+.ppass {
+  position: relative;
+  top: 125px;
+}
+/* fin login */
+/* fin wbox */
+/* fin primera seccion */
+/* segunda seccion */
+.b {
+  height: 980px;
+  background-color: #40b193;
+}
+/* caja blanca */
+.b > .wbox {
+  width: 791px;
+  height: 870px;
+  top: 985px;
+  left: 66px;
+}
+.textob {
+  font-family: poppins, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  text-align: left;
+  line-height: 21px;
+  padding: 51px 48px 0 48px;
+  padding-top: 51px;
+  padding-left: 48px;
+}
+.b > .wbox > .textob > .titulo {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 46px;
+}
+/* fin de caja blanca */
+/*imagen*/
+.b > .kanbi {
+  width: 923px;
+  height: 809px;
+  position: relative;
+  top: 100px;
+  left: 50%;
+}
+/*fin imagen */
+/* fin segunda seccion */
+/* tercera seccion */
+.c {
+  height: 716px;
+  background-color: #6c8ece;
+}
+/*wbox */
+.c > .wbox {
+  width: 1739px;
+  height: 606px;
+  top: 1965px;
+  left: 66px;
+}
+.c > .wbox > .contacto {
+  font-family: poppins, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  text-align: left;
+  line-height: 21px;
+  padding: 48px 49px 0 49px;
+}
+.c > .wbox > .contacto > p {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 46px;
+}
+/* form contacto */
+.c > .wbox > .contacto > form {
+  width: 50%;
+}
+.c > .wbox > .contacto > form > .ftexta {
+  resize: none;
+  height: 250px;
+  margin-bottom: 15px;
+  width: 100%;
+  font-family: poppins, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  line-height: 21px;
+  text-indent: 10px;
+}
+/*fin form contacto */
+/* fin wbox */
+.c > .kanbi {
+  width: 517px;
+  height: 448px;
+  position: relative;
+  top: 170px;
+  left: 58%;
+}
+/* fin tercera seccion*/
+/* fin style secciones */
+footer {
+  background-color: #01b1ec;
+  height: 66px;
+  width: 100%;
+}
+
+.Ebox{
+  width: 538px;
+  height: 754px;
+  background-color: #ffffff;
+  box-shadow: 0px 3px 6px grey;
+  border-radius: 49px;
+  position: relative;
+  top: 120px;
+  left: 50%;
+  z-index: 100;
+}
+
+@media only screen and (max-width: 1440px) {
+  body {
+    zoom: 80%;
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  body {
+    zoom: 70%;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  body {
+    zoom: 60%;
+  }
+}

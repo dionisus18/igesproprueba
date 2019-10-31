@@ -9,6 +9,13 @@
             <p class="poppins semibold" style="color: #D54D4D;"> La contraseña ingresada es incorrecta </p>
         <?php
                 break;
+
+         case "notConfirmed":
+            ?>
+            <p class="poppins semibold" style="color: #D54D4D;"> Debe Confirmar su cuenta antes de ingresar. </p>
+        <?php
+                break;
+
             case "notFound":
                 ?>
             <p class="poppins semibold" style="color: #D54D4D;"> La cuenta ingresada no existe </p>
@@ -26,7 +33,7 @@
                 break;
             case "ucreated":
                 ?>
-            <p class="poppins semibold" style="color: #6C8ECE;"> ¡Cuenta creada, ingresar ahora mismo! </p>
+            <p class="poppins semibold" style="color: #6C8ECE;"> ¡Cuenta creada! No olvides confirmar tu correo </p>
         <?php
                 break;
         }

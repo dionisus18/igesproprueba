@@ -44,16 +44,16 @@
                 <form id="formLogin" action="../controller/agregarUsuario.php" method="POST" enctype="multipart/form-data" >
                     <label for="fnombre">Nombre:</label>
                     <input type="text" id="fnombre" name="nombre"
-                    placeholder="Escriba su nombre aqui">
+                    placeholder="Escriba su nombre aqui" required>
                     <label for="femail">Correo electronico:</label>
                     <input type="text" id="femail" name="email"
-                    placeholder="Escriba su correo electronico aqui">
+                    placeholder="Escriba su correo electronico aqui" required>
                     <label for="fpass">Contraseña:</label>
                     <input type="password" id="fpass" name="pass"
-                    placeholder="Escriba su contraseña aqui">
+                    placeholder="Escriba su contraseña aqui" required>
                     <label for="frep">Repita la contraseña:</label>
                     <input type="password" id="frep" name="repass"
-                    placeholder="Vuelva a escribir su contraseña aqui">
+                    placeholder="Vuelva a escribir su contraseña aqui" required>
                     <input type="submit" value="¡Crear cuenta y comenzar con mi proyecto!">
                 </form>
                 <!-- fin del formulario de registro -->
@@ -69,25 +69,67 @@
 <script type="text/javascript">
 
     let formulario = document.getElementById("formLogin");
-    let email = document.getElementById("femail");
-    let password = document.getElementById("fpass");
-    let nombre = document.getElementById("fnombre");
-    let passwordVal = document.getElementById("frep");
+    let email = document.getElementById("femail");    
+    let password = document.getElementById("fpass");    
+    let nombre = document.getElementById("fnombre");    
+    let passwordVal = document.getElementById("frep");    
     let nombreUsuario = email;
     let poolData;
 
-    formulario.addEventListener("submit", function(evt) {
-        evt.preventDefault();
-        console.log(email.value,password.value)
-        if (email && password && passwordVal && email.value && password.value && nombre && nombre.value) {
-            if (passwordVal.value === password.value) {
-                registrar(email.value, password.value);
-            }else{
-                alert("Las contraseñas no coinciden");
-            }
+    var inputs = document.getElementsByTagName('input');
+    window.onload = function() {
+      
+      for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].type == 'text') {
+          inputs[i].onchange = function() {
+            this.value = this.value.replace(/^\s+/, '').replace(/\s+$/, '');
+            console.log("texto");
+        };
+    }
+
+    if (inputs[i].type == 'password') {
+      inputs[i].onchange = function() {
+        this.value = this.value.replace(/^\s+/, '').replace(/\s+$/, '');
+        console.log("passs");
+    };
+}
+
+}
+}
+
+for (var i = 0; i < inputs.length; i++) {
+    inputs[i].oninvalid = function(e) {
+        e.target.setCustomValidity("");
+        console.log("1");
+        if (!e.target.validity.valid) {
+            e.target.setCustomValidity("Los campos no pueden estar vacios");
+            console.log("2");
+        }           
+
+    };
+    inputs[i].oninput = function(e) {
+        e.target.setCustomValidity("");
+    };
+}
+
+ formulario.addEventListener("submit", function(evt) {
+    evt.preventDefault();
+    console.log("3");
+    console.log(email.value,password.value)
+    if (email && password && passwordVal && email.value && password.value && nombre && nombre.value) {
+        if (passwordVal.value === password.value) {
+            console.log("4");
+            registrar(email.value, password.value);
+        }else{
+
+            window.location = ('registrarse.php?mjs=wrongpass');
         }
-    });
+    }
+});
+
+
     // prueba();
+
     function registrar(email, password){
         poolData = {
             UserPoolId : _config.cognito.userPoolId, 
@@ -120,7 +162,7 @@
            if (err) {
             console.error(err.message || JSON.stringify(err));
             if (err.message == "An account with the given email already exists.") {
-                alert("Ya existe registrada una cuenta con ese correo")
+                window.location = ('registrarse.php?mjs=exist');              
             }
             reject(err.message);
             return;
@@ -143,7 +185,7 @@
                         var json_data = request.responseText; 
                         console.log(json_data, request);
                         if (json_data.trim() == "ok") {
-                            console.log("llegada");
+                            // console.log("llegada");
                             window.location.replace("../index.php?mjs=ucreated");
                         }
                     }

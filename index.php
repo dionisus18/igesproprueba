@@ -6,7 +6,7 @@ if (isset($_SESSION['idUsuario'])) {
     exit();
 }
 $loginURL = $gClient->createAuthUrl();
-
+echo print_r($_SESSION);
 $redirectURL = "http://localhost/Gespro/fb-callback.php";
 $permissions = ['email'];
 $loginURL2 = $helper->getLoginUrl($redirectURL, $permissions);
@@ -241,7 +241,11 @@ unset($_SESSION['idUsuario']);
                         console.log(json_data, request);
                         if (json_data.trim() == "ok") {
                             console.log("llegada");
-                            window.location.replace("view/dashboard.php");
+                            sessionStorage.setItem('idUsuario', json_data.trim());
+                            window.location.replace("view/dashboard.php") ;
+                            // return;
+                        }else if (json_data.trim() == "false") {
+                            alert("lo que sea");
                         }
                     }
                 }
@@ -250,8 +254,9 @@ unset($_SESSION['idUsuario']);
         },
         onFailure: function(err) {
             console.error(err.message || JSON.stringify(err));
-            if (err.message == "Unkown error") {
-                alert("No ha confirmado su cuenta")
+            if (err.message == "Unkown error" || err.message == "User is not confirmed." ) {       
+                window.location = ('index.php?mjs=notConfirmed');   
+                // alert("No ha confirmado su cuenta")
             }else{
                 alert(err.message || JSON.stringify(err));
             }

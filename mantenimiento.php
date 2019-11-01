@@ -17,7 +17,6 @@ $whoops->register();
     <link rel="stylesheet" href="https://use.typekit.net/exz7ifs.css">        
 </head>
 <body class="reg">
-
     <!-- Este header es el mismo en todas las paginas de GESPRO -->
     <header>
         <nav>
@@ -28,7 +27,6 @@ $whoops->register();
         </nav>
     </header>
     <!-- Fin del header -->
-
     <!-- seccion 1 -->
     <section class="section a">
         <div class="back">
@@ -36,9 +34,7 @@ $whoops->register();
                 <img src="img/icono-back.png" class="iback">
                 <p> Volver a la pagina principal </p>
             </a>
-
         </div>
-
         <div class="wbox">
             <img src="img/Isotipo.png" class="isotipo">
 
@@ -68,10 +64,8 @@ $whoops->register();
         let formulario = document.getElementById("formEmail");
         let mensajes = document.getElementById("mensajes");
         let email = document.getElementById("femail");
-        
         let poolData;
-
-        let segundoForm = `<form id="formValidacion">
+        let formValidacion = `<form id="formValidacion">
         <label for="fpass">Codigo de Validacion:</label>
         <input type="text" id="verificationCode" name="verificationCode"
         placeholder="Ingrese codigo aca">
@@ -83,7 +77,6 @@ $whoops->register();
         placeholder="Vuelva a escribir su contraseña aqui">
         <input type="submit" value="Confirmar">
         </form>`;
-
         poolData = {
             UserPoolId : _config.cognito.userPoolId, 
             ClientId : _config.cognito.clientId 
@@ -99,65 +92,107 @@ $whoops->register();
                     Pool : userPool
                 };
                 if (userData.hasOwnProperty("Username") && userData.Username != "") {
-                    console.table(userData);
                     cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
+                    console.table(cognitoUser);
                     cognitoUser.forgotPassword({
                         onSuccess: function (result) {
-                            // console.log('call result: ' + result);
+                            console.log('call result: onSuccess ' + result);
                             console.log("1")
+                            window.location.replace("./index.php");
                         },
                         onFailure: function(err) {
                             // alert(err);
-                            console.log("2",err);
+                            console.log("2 onFailure",err);
                             if (err.code == "UserNotFoundException") {
                                 mensajes.textContent = "El correo ingresado no esta asociado a una cuenta";
                                 addClass(mensajes, "poppins");
+                                addClass(mensajes, "errorColor");
                                 addClass(mensajes, "semibold");
-                            }else if (err.code == "UnknownError") {
+                           /* }else if (err.code == "UnknownError") {
                                 mensajes.textContent = "Error en el servidor";
                                 addClass(mensajes, "poppins");
-                                addClass(mensajes, "semibold");
+                                addClass(mensajes, "semibold");*/
                             }else if (err.code == "LimitExceededException") {
-                                mensajes.textContent = "Excedidas las respuestas para el dia de hoy :/";
+                                mensajes.textContent = "Ha exedido el limite de intentos, pruebe mas tarde";
                                 addClass(mensajes, "poppins");
+                                addClass(mensajes, "errorColor");
                                 addClass(mensajes, "semibold"); 
 
+                            }else if(err.code == "InvalidParameterException") {
+                                mensajes.textContent = err.message;
+                                addClass(mensajes, "poppins");
+                                addClass(mensajes, "errorColor");
+                                addClass(mensajes, "semibold"); 
                             }
                         },
-                        inputVerificationCode() {
-                            console.log("3");
-                            registroContent.innerHTML = segundoForm;
+                        async inputVerificationCode() {
+                            console.log("3 inputVerificationCode");
+                            registroContent.innerHTML = formValidacion;
                             titulo.textContent = "Verificación";
                             mensajes.textContent = "Se ha enviado un codigo de Verificación al correo ingresado";
                             removeClass(mensajes, "poppins");
+                            removeClass(mensajes, "errorColor");
                             removeClass(mensajes, "semibold");
-                            let segundoForm = document.getElementById("formValidacion");
-                            formulario.addEventListener("submit", function(evt) {
-                                let password = document.getElementById("fpass");
-                                let passwordVal = document.getElementById("frep");
-                                let verificationCode = document.getElementById("verificationCode");
-
-                                if (verificationCode && verificationCode.value.trim() != "" && password && passwordVal && passwordVal.value.trim() != "" && password.value.trim() != "") {
+                            let promiseForm = new Promise((resolve, reject) => {
+                                let formValidacion = document.getElementById("formValidacion");
+                                console.log("nivel 1")
+                                formValidacion.addEventListener("submit", function(evt) {
+                                   console.log("nivel 2")
+                                   evt.preventDefault();
+                                   let password = document.getElementById("fpass");
+                                   let passwordVal = document.getElementById("frep");
+                                   let verificationCode = document.getElementById("verificationCode");
+                                   if (verificationCode && verificationCode.value.trim() != "" && password && passwordVal && passwordVal.value.trim() != "" && password.value.trim() != "") {
                                     if (passwordVal.value.trim() == password.value.trim()) {
-
+                                        console.log("Antes del resolve")
+                                        resolve([verificationCode.value.trim(), password.value.trim()]);
+                                        var cognitoUser = new AmazonCognitoIdentity.CognitoUser(userData);
+                                        cognitoUser.confirmPassword(verificationCode.value.trim(), password.value.trim(), {
+                                            onFailure(err) {
+                                                console.log(err);
+                                                if(err.code == "InvalidParameterException") {
+                                                    mensajes.textContent = err.message;
+                                                    addClass(mensajes, "poppins");
+                                                    addClass(mensajes, "errorColor");
+                                                    addClass(mensajes, "semibold");
+                                                }
+                                            },
+                                            onSuccess() {
+                                                console.log("Success");
+                                                window.location.replace("./index.php");
+                                            },
+                                        });
+                                        console.log("Despues del resolve");
                                     }else{
                                         mensajes.textContent = "Las contraseñas ingresadas no coinciden";
                                         addClass(mensajes, "poppins");
+                                        addClass(mensajes, "errorColor");
                                         addClass(mensajes, "semibold");
                                     }
                                 }else{
                                     mensajes.textContent = "No ingrese campos vacios";
                                     addClass(mensajes, "poppins");
+                                    addClass(mensajes, "errorColor");
                                     addClass(mensajes, "semibold");
                                 }
-                                cognitoUser.confirmPassword(verificationCode, newPassword, this);
+
+
                             });
+                            });
+                            promiseForm.then(([verificationCode, password]) => {
+                                console.log("61 inputVerificationCode");
+                                console.log(verificationCode, password);
+
+                                console.log("6 inputVerificationCode");
+
+                            });
+                            console.log("4 inputVerificationCode");
                             // let verificationCode = prompt('Please input verification code ' ,'');
                             // let newPassword = prompt('Enter new password ' ,'');
                             // cognitoUser.confirmPassword(verificationCode, newPassword, this);
                         }
                     });
-                }
+}
                 // if (passwordVal.value === password.value) {
                 //     registrar(email.value, password.value);
                 // }else{
@@ -166,7 +201,9 @@ $whoops->register();
             }else{
                 mensajes.textContent = "Debes ingresar el email antes de cambiar una contraseña";
                 addClass(mensajes, "poppins");
+                addClass(mensajes, "errorColor");
                 addClass(mensajes, "semibold");
+
             }
         });
 

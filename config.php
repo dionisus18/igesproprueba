@@ -8,8 +8,9 @@ $gClient = new Google_Client();
 $gClient->setClientId("813424256761-9hpp85rk2nf7mkjscpmuhptnrrteeukp.apps.googleusercontent.com");
 $gClient->setClientSecret("lTrPl4f4DK7Q7HsmgHdxO7gB");
 $gClient->setApplicationName("Gespro");
-$gClient->setRedirectUri("http://localhost/GesproApp/src/g-callback.php");
+$gClient->setRedirectUri("http://localhost:8080/igesproprueba/g-callback.php");
 $gClient->addScope("https://www.googleapis.com/auth/plus.login  https://www.googleapis.com/auth/plus.profile.emails.read");
+
 
 $FB = new \Facebook\Facebook([
     'app_id' => '322052192008031',

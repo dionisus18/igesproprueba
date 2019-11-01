@@ -6,8 +6,10 @@ if (isset($_SESSION['idUsuario'])) {
     exit();
 }
 $loginURL = $gClient->createAuthUrl();
-echo print_r($_SESSION);
+// echo print_r($_SESSION);
+// $redirectURL = "http://localhost:8080/igesproprueba/fb-callback.php";
 $redirectURL = "http://localhost/Gespro/fb-callback.php";
+
 $permissions = ['email'];
 $loginURL2 = $helper->getLoginUrl($redirectURL, $permissions);
 ?>
@@ -82,11 +84,11 @@ unset($_SESSION['idUsuario']);
                 <p>Tambien puedes ingresar con alguna de tus redes sociales:</p>
                 
                 <!-- Redes sociales -->
-                <a onclick="" class="facebook">
+                <a onclick="window.location = '<?php echo $loginURL2 ?>';" class="facebook">
                     <p><img src="img/icono-facebook.png" class="iface">
                     Utiliza tu cuenta de Facebook </p>
                 </a>
-                <a onclick="" class="google">
+                <a onclick="window.location = '<?php echo $loginURL ?>';" class="google">
                     <p><img src="img/icono-google.png" class="igoogle">
                     Utiliza tu cuenta de Google </p>
                 </a>
@@ -257,10 +259,10 @@ unset($_SESSION['idUsuario']);
             if (err.message == "Unkown error" || err.message == "User is not confirmed." ) {       
                 window.location = ('index.php?mjs=notConfirmed');   
                 // alert("No ha confirmado su cuenta")
-            }else{
-                alert(err.message || JSON.stringify(err));
-            }
-        },
+            }else if (err.message == "Incorrect username or password" ) {       
+                window.location = ('index.php?mjs=pass');                
+            } 
+        }, 
     });
 }   
 
